@@ -7,24 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
-
-extension UIViewController: NVActivityIndicatorViewable {
-
-    func showHUD() {
-        startAnimating(CGSize(width: 80, height: 80), message: "", type: NVActivityIndicatorType.ballRotateChase, color: UIColor.legend_red, backgroundColor: UIColor.white.withAlphaComponent(0.5) ,fadeInAnimation: nil)
-    }
-    
-    func hideHUD() {
-        self.stopAnimating(nil)
-    }
-}
-
-extension String {
-    func widthOf(_ font: UIFont) -> CGFloat {
-        return self.size(withAttributes: [NSAttributedString.Key.font: font]).width
-    }
-}
 
 extension UIApplication {
     //  USAGE:
@@ -70,28 +52,5 @@ extension UIViewController{
             actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
         }
        self.present(actionSheet, animated: true, completion: nil)
-    }
-}
-
-extension Date {
-    func string(format: String) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = format
-        return formatter.string(from: self)
-    }
-    //usage
-    // Date().string(format: "yyyy-MM-dd")
-    
-}
-extension String{
-    func fromStringToDate(format:String ) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = Constants.APIDateFormat
-        if let dateObj = formatter.date(from: self) {
-              formatter.dateFormat = format
-            return formatter.string(from: dateObj)
-        }
-      
-        return self
     }
 }
