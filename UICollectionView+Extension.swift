@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UICollectionView {
     func register<T: UICollectionViewCell>(cellType: T.Type, bundle: Bundle? = nil) {

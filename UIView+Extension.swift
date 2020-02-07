@@ -114,7 +114,7 @@ extension UIView {
 extension Hashable {
     func share() {
         let activity = UIActivityViewController(activityItems: [self], applicationActivities: nil)
-        UIApplication.topViewController?.present(activity, animated: true, completion: nil)
+        UIApplication.shared.topViewController?.present(activity, animated: true, completion: nil)
     }
 }
 
