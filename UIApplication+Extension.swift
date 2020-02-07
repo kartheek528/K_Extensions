@@ -9,17 +9,24 @@ import Foundation
 import UIKit
 
 public extension UIApplication {
+    
     var topViewController: UIViewController? {
-        let keyWindow = UIApplication.shared.connectedScenes
-            .filter({$0.activationState == .foregroundActive})
-            .map({$0 as? UIWindowScene})
-            .compactMap({$0})
-            .first?.windows
-            .filter({$0.isKeyWindow}).first
-        
-        guard var topViewController = keyWindow?.rootViewController else { return nil }
+        var topViewController: UIViewController?
+        if #available(iOS 13, *) {
+            // iOS 13 (or newer) code
+            let keyWindow = UIApplication.shared.connectedScenes
+                .filter({$0.activationState == .foregroundActive})
+                .map({$0 as? UIWindowScene})
+                .compactMap({$0})
+                .first?.windows
+                .filter({$0.isKeyWindow}).first
+            topViewController = keyWindow?.rootViewController
+        } else {
+            // iOS 12 or older code
+            topViewController = UIApplication.shared.keyWindow?.rootViewController
+        }
 
-        while let presentedViewController = topViewController.presentedViewController {
+        while let presentedViewController = topViewController?.presentedViewController {
             topViewController = presentedViewController
         }
         return topViewController
