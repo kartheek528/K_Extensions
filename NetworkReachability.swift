@@ -1,9 +1,8 @@
 //
 //  NetworkReachability.swift
-//  Legendary
 //
 //  Created by Kartheek Boggarapu on 27/01/20.
-//  Copyright © 2020 Soffice. All rights reserved.
+//  Copyright © 2020. All rights reserved.
 //
 
 import Foundation

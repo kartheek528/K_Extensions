@@ -1,9 +1,8 @@
 //
 //  UICollectionView+Extension.swift
-//  Legendary
 //
 //  Created by Kartheek Boggarapu on 24/12/19.
-//  Copyright © 2019 Soffice. All rights reserved.
+//  Copyright © 2019. All rights reserved.
 //
 
 import Foundation

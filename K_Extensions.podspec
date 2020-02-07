@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "K_Extensions"
-  spec.version      = "1.0.1"
+  spec.version      = "1.1"
   spec.summary      = "First version of K_Extensions."
 
   # This description is used to generate tags and improve search results.

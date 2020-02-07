@@ -1,9 +1,8 @@
 //
 //  UIView+Extension.swift
-//  Zaggle
 //
 //  Created by Kartheek on 24/10/18.
-//  Copyright © 2018 Zaggle. All rights reserved.
+//  Copyright © 2018. All rights reserved.
 //
 
 import UIKit
@@ -101,45 +100,6 @@ extension UIView {
     }
 }
 
-extension Encodable {
-    func asDictionary() throws -> [String: Any] {
-        let data = try JSONEncoder().encode(self)
-        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-            throw NSError()
-        }
-        return dictionary
-    }
-}
-
-
-public extension Data {
-    var fileExtension: String {
-        var values = [UInt8](repeating:0, count:1)
-        self.copyBytes(to: &values, count: 1)
-        
-        let ext: String
-        switch (values[0]) {
-        case 0xFF:
-            ext = ".jpg"
-        case 0x89:
-            ext = ".png"
-        case 0x47:
-            ext = ".gif"
-        case 0x49, 0x4D :
-            ext = ".tiff"
-        default:
-            ext = ".png"
-        }
-        return ext
-    }
-}
-
-extension NSObject {
-    static var className: String {
-        return String(describing: self)
-    }
-}
-
 extension UIView {
     func fadeTransition(_ duration:CFTimeInterval) {
         let animation = CATransition()
@@ -148,18 +108,6 @@ extension UIView {
         animation.type = CATransitionType.fade
         animation.duration = duration
         layer.add(animation, forKey: CATransitionType.fade.rawValue)
-    }
-}
-
-extension UIApplication {
-    class var topViewController: UIViewController? { return getTopViewController() }
-    private class func getTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
-        if let nav = base as? UINavigationController { return getTopViewController(base: nav.visibleViewController) }
-        if let tab = base as? UITabBarController {
-            if let selected = tab.selectedViewController { return getTopViewController(base: selected) }
-        }
-        if let presented = base?.presentedViewController { return getTopViewController(base: presented) }
-        return base
     }
 }
 

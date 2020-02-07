@@ -1,9 +1,8 @@
 //
 //  UIDevice+Extension.swift
-//  Zaggle
 //
 //  Created by Kartheek Boggarapu on 08/01/19.
-//  Copyright © 2019 Zaggle. All rights reserved.
+//  Copyright © 2019. All rights reserved.
 //
 
 import Foundation

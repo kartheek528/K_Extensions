@@ -1,9 +1,8 @@
 //
 //  UITableView+Extension.swift
-//  Legendary
 //
 //  Created by Kartheek Boggarapu on 30/11/19.
-//  Copyright © 2019 Soffice. All rights reserved.
+//  Copyright © 2019. All rights reserved.
 //
 
 import Foundation

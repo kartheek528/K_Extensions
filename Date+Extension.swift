@@ -1,9 +1,8 @@
 //
 //  Date+Extension.swift
-//  Legendary
 //
 //  Created by Kartheek Boggarapu on 23/01/20.
-//  Copyright © 2020 Soffice. All rights reserved.
+//  Copyright © 2020. All rights reserved.
 //
 
 import Foundation

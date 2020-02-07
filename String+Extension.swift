@@ -1,12 +1,12 @@
 //
 //  String+Extension.swift
-//  Legendary
 //
 //  Created by Kartheek Boggarapu on 16/12/19.
-//  Copyright © 2019 Soffice. All rights reserved.
+//  Copyright © 2019. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
 extension String {
     func capitalizingFirstLetter() -> String {
@@ -16,9 +16,6 @@ extension String {
     mutating func capitalizeFirstLetter() {
       self = self.capitalizingFirstLetter()
     }
-}
-
-extension String {
 
     func widthOfString(usingFont font: UIFont) -> CGFloat {
         let fontAttributes = [NSAttributedString.Key.font: font]

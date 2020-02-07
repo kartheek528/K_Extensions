@@ -1,14 +1,13 @@
 //
 //  Array+Extension.swift
-//  MorningBasket
 //
 //  Created by Kartheek Boggarapu on 23/11/19.
-//  Copyright © 2019 Soffice. All rights reserved.
+//  Copyright © 2019. All rights reserved.
 //
 
 import Foundation
 
-extension Array where Element:Equatable {
+extension Array where Element: Equatable {
     func removeDuplicates() -> [Element] {
         var result = [Element]()
 

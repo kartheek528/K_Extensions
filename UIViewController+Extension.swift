@@ -1,31 +1,13 @@
 //
 //  UIViewController+Extension.swift
-//  Zaggle
 //
 //  Created by Kartheek Boggarapu on 05/12/18.
-//  Copyright © 2018 Zaggle. All rights reserved.
+//  Copyright © 2018. All rights reserved.
 //
 
 import UIKit
 
-extension UIApplication {
-    //  USAGE:
-    //  UIApplication.shared.topViewController
-    
-    var topViewController: UIViewController? {
-        guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
-
-        while let presentedViewController = topViewController.presentedViewController {
-            topViewController = presentedViewController
-        }
-        return topViewController
-    }
-
-    var topNavigationController: UINavigationController? {
-        return topViewController as? UINavigationController
-    }
-}
-extension UIViewController{
+extension UIViewController {
     
     func performUIAlert(title: String?, message: String?, actionTitles:[String?], actions:[(UIAlertAction) -> Void]) {
         
